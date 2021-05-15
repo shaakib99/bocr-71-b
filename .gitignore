@@ -2,3 +2,5 @@
 db.sqlite3
 .vscode/
 bocr_71_api/__pycache__/
+bocr_71_api/text_classifier/
+bocr_71_b/__pycache__/

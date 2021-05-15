@@ -1,0 +1,1 @@
+CHARACTER_CLASSIFIER_WEIGHT = '/bocr_71_api/text_classifier/weights/word_classifier_weight/best.pt'
