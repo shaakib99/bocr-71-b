@@ -1,1 +1,8 @@
 .DS_Store
+db.sqlite3
+.vscode/
+bocr_71_api/__pycache__/
+bocr_71_api/test/
+bocr_71_api/text_classifier/yolo/
+bocr_71_api/text_classifier/weight/
+bocr_71_b/__pycache__/
