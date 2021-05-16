@@ -1,9 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from bocr_71_api.text_classifier.yolo.detect import detect
-from bocr_71_api.text_classifier.helpers.classes import Recognizer
-from bocr_71_api.constants import CHARACTER_CLASSIFIER_WEIGHT
+from django.http import HttpResponse, JsonResponse
+from bocr_71_api.classifier_helper.classifier import get_text_from_image
 
 def get_text(request):
     # if not request.GET: return
-    return HttpResponse('HELLO')
+    print(get_text_from_image(image_src='bocr_71_api/test.png'))
+
+    return HttpResponse('Done')
