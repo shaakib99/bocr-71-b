@@ -5,4 +5,5 @@ bocr_71_api/__pycache__/
 bocr_71_api/test/
 bocr_71_api/text_classifier/yolo/
 bocr_71_api/text_classifier/weight/
+bocr_71_api/images/
 bocr_71_b/__pycache__/

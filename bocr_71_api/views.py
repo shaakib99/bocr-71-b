@@ -10,18 +10,18 @@ import cv2
 @csrf_exempt
 def get_text(request):
     data = json.loads(request.body)
-    if not data or data.get('blobImg') == None: return JsonResponse({'status': '400'})
+    if not data or data.get('blobImg') == None: return JsonResponse({'status': 400})
 
-    decodable_data = data['blobImg'][22:]
-    filename = f'bocr_71_api/test/{generate_random_name()}.png'
+    decodable_data = data['blobImg'][22:] # leaves data/png base64 unnecessary encoding text
+    filename = f'bocr_71_api/images/{generate_random_name()}.png'
 
     with open(filename, 'wb') as f:
         f.write(base64.b64decode(decodable_data))
 
     img = cv2.imread(filename)
-    img = cv2.GaussianBlur(img,(3,3),0)
+    img = cv2.medianBlur(img,3)
     cv2.imwrite(filename, img)
 
     text = get_text_from_image(image_src=filename)
 
-    return JsonResponse({'status': '200', 'text':text})
+    return JsonResponse({'status': 200, 'text':text})
